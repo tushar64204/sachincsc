@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume and CV Services</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Light background color */
+}
+
+header {
+    position: relative; /* Allow positioning of overlapping elements */
+    overflow: hidden; /* Hide overflow of overlapping content */
+}
+
+.header-image {
+    width: 100%;
+    height: 250px; /* Set height for the header image */
+    object-fit: cover; /* Cover the area without distortion */
+    filter: brightness(0.8); /* Darken the image for better text visibility */
+}
+
+.header-title {
+    position: absolute;
+    top: 60%; /* Position title vertically */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the title */
+    color: white; /* Title text color */
+    font-size: 2.5rem; /* Title font size */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add shadow for better readability */
+}
+
+.slogan {
+    position: absolute;
+    top: 70%; /* Position slogan below the title */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the slogan */
+    color: #ffdd57; /* Slogan text color */
+    font-size: 1.5rem; /* Slogan font size */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow for slogan */
+}
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .slogan {
+        font-size: 1.2rem; /* Smaller font size for mobile */
+        margin-top: 39px; /* Less space above for mobile */
+    }
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0; /* Space above and below */
+    color: #333; /* Dark color for header */
+}
+
+.resume-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the resume cards */
+    margin: 20px 0; /* Space above and below */
+}
+
+.resume-card {
+    background: white; /* Card background */
+    border: 1px solid #ccc; /* Border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px; /* Padding inside cards */
+    margin: 10px; /* Margin between cards */
+    width: 300px; /* Fixed width for cards */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+    transition: transform 0.2s; /* Animation for hover effect */
+}
+
+.resume-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+/* Customer Reviews Section */
+.reviews {
+    margin: 20px auto; /* Center the reviews section */
+    padding: 20px; /* Padding for review section */
+    background: #fff; /* Review section background */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+    max-width: 800px; /* Limit width of the reviews section */
+}
+
+.reviews h2 {
+    text-align: center; /* Center the heading */
+    color: #007acc; /* Heading color */
+}
+
+.review {
+    display: flex; /* Flexbox for review layout */
+    align-items: center; /* Center align items */
+    margin-bottom: 15px; /* Space between reviews */
+    border-bottom: 1px solid #ccc; /* Separator line */
+    padding-bottom: 10px; /* Padding below each review */
+}
+
+.review:last-child {
+    border-bottom: none; /* Remove border for last review */
+}
+
+.review .rating {
+    display: flex; /* Flexbox for star ratings */
+    margin-right: 10px; /* Space between stars and text */
+}
+
+.star {
+    color: #ffcc00; /* Gold color for stars */
+    font-size: 20px; /* Star size */
+}
+
+.review p {
+    font-style: italic; /* Italic style for review text */
+    color: #555; /* Dark gray color for review text */
+}
+
+/* Navigation Bar */
+.nav-bar {
+    background: #007acc; /* Background color for the nav bar */
+    padding: 10px; /* Padding for nav bar */
+    text-align: center; /* Center the button */
+    margin-bottom: 20px; /* Space below nav bar */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.nav-button {
+    color: white; /* Button text color */
+    text-decoration: none; /* Remove underline */
+    font-size: 1.2rem; /* Button font size */
+    padding: 10px 15px; /* Button padding */
+    border-radius: 5px; /* Rounded corners */
+    transition: background 0.3s; /* Transition for hover effect */
+}
+
+.nav-button:hover {
+    background: #005fa3; /* Darker color on hover */
+}
+
+/* ONDC Section */
+.ondc-section {
+    margin-top: 30px; /* Space above ONDC section */
+    padding: 20px; /* Padding for ONDC section */
+    background: #e0f7fa; /* Light background for ONDC */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+}
+
+.ondc-title {
+    font-size: 1.5rem; /* Title font size */
+    color: #007acc; /* Title color */
+    margin-bottom: 10px; /* Space below title */
+}
+
+.ondc-description {
+    margin: 10px 0; /* Margin above and below description */
+    line-height: 1.5; /* Line height for readability */
+}
+
+/* Additional Styles for List */
+ul {
+    list-style-type: disc; /* Bullet points */
+    margin-left: 20px; /* Space on left */
+}
+
+li {
+    margin-bottom: 5px; /* Space between list items */
+}
+
+/* WhatsApp Button Styles */
+.whatsapp-button {
+    text-align: center; /* Center align the button */
+    margin: 20px 0; /* Space above and below */
+}
+
+.whatsapp-button a {
+    background-color: #25D366; /* WhatsApp green color */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Padding for the button */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1.2rem; /* Font size */
+    transition: background 0.3s; /* Transition effect */
+}
+
+.whatsapp-button a:hover {
+    background-color: #1DA851; /* Darker green on hover */
+}
+
+.service-message {
+    text-align: center; /* Center align the message */
+    margin: 20px 0; /* Space above and below */
+    font-size: 1.2rem; /* Font size for the message */
+    color: #333; /* Dark color for the message text */
+    background-color: #f9f9f9; /* Light background color */
+    padding: 15px; /* Padding for the message */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header-title {
+        font-size: 2rem; /* Smaller font size for mobile */
+    }
+
+    .slogan {
+        font-size: 1.2rem; /* Smaller font size for mobile */
+    }
+
+    .resume-card {
+        width: 90%; /* Full width for mobile cards */
+    }
+
+    .nav-button {
+        font-size: 1rem; /* Smaller button size for mobile */
+        padding: 8px 12px; /* Smaller padding for mobile */
+    }
+
+    .service-message {
+        font-size: 1rem; /* Smaller message font size for mobile */
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="./logocsc.jpg" alt="Resume Service Image" class="header-image"> <!-- Replace with your image source -->
+        <div class="header-title">Resume and CV Creation</div>
+        <div class="slogan">Unlock Your Potential with Professional Resumes!</div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <div class="nav-bar">
+        <a href="#ondc-section" class="nav-button">Explore ONDC Feature</a>
+    </div>
+
+    <!-- Example Resumes Section -->
+    <div class="resume-section">
+        <div class="resume-card">
+            <h2>Resume 1: Professional Template</h2>
+            <p>A clean, professional template designed for executives.</p>
+            <a href="./professional.jpg" target="_blank">Download Sample</a>
+        </div>
+
+        <div class="resume-card">
+            <h2>Resume 2: Creative Template</h2>
+            <p>An eye-catching resume for designers and creatives.</p>
+            <a href="./creative.jpg" target="_blank">Download Sample</a>
+        </div>
+    </div>
+
+    <!-- Customer Reviews Section -->
+    <section class="reviews">
+        <h2>Customer Reviews</h2>
+        <div class="review">
+            <div class="rating">
+                <span class="star">⭐</span>
+                <span class="star">⭐</span>
+                <span class="star">⭐</span>
+                <span class="star">⭐</span>
+                <span class="star">⭐</span>
+            </div>
+            <p>"Great resume service, got hired within weeks!" - Customer 1</p>
+        </div>
+        <div class="review">
+            <div class="rating">
+                <span class="star">⭐</span>
+                <span class="star">⭐</span>
+                <span class="star">⭐</span>
+                <span class="star">⭐</span>
+                <span class="star">⭐</span>
+            </div>
+            <p>"The CV was perfect for my job application!" - Customer 2</p>
+        </div>
+        <div class="review">
+            <div class="rating">
+                <span class="star">⭐</span>
+                <span class="star">⭐</span>
+                <span class="star">⭐</span>
+                <span class="star">⭐</span>
+                <span class="star">⭐</span>
+            </div>
+            <p>"Professional and timely service!" - Customer 3</p>
+        </div>
+    </section>
+
+    <!-- ONDC Section -->
+    <section id="ondc-section" class="ondc-section">
+        <h2 class="ondc-title">Introducing ONDC Feature!</h2>
+        <p class="ondc-description">With just your GST and a canceled check, you can now sell online. Our team will assist you at zero cost!</p>
+        <h4>Why Choose ONDC?</h4>
+                <ul>
+                    <li>🚀 Free Listing: No fees for GST-holding sellers.</li>
+                    <li>📈 Increased Visibility: Gain access to a larger customer base.</li>
+                    <li>📦 Hassle-Free Delivery: Streamlined order and delivery management.</li>
+                    <li>🔒 Government-Supported: Enjoy a trusted platform backed by government initiatives.</li>
+                </ul>
+    </section>
+    <!-- WhatsApp Contact Button -->
+    <div class="service-message">
+    <p>Need a standout resume? Our professional resume writing service will help you create an impactful resume that catches employers' attention. Get started today!</p>
+</div>
+
+<div class="whatsapp-button">
+    <a href="https://api.whatsapp.com/send?phone=919817409607&text=Hello%20I%20need%20assistance!Resume" target="_blank">
+        Contact Me on WhatsApp
+    </a>
+</div>
+
+</body>
+</html>

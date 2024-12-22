@@ -1,0 +1,295 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.hero {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.hero-image {
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+}
+.h1 {
+    font-size: 3.5rem;
+    text-align: center;
+    align-items: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.overlay p {
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+.projects-section {
+    padding: 40px 20px;
+    background: #fff;
+}
+
+.projects-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #444;
+}
+
+.project-card {
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 900px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.project-card h3 {
+    color: #333;
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.project-card p {
+    color: #666;
+}
+
+.project-card a {
+    color: #007acc;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 0px;
+}
+
+.project-iframe {
+    width: 200px;
+    height: 120px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 0px;
+    position: relative;
+}
+
+.reviews {
+    background: #007acc;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.reviews h2 {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.review {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    font-style: italic;
+}
+
+.review span {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #ccc;
+}
+
+@media (max-width: 768px) {
+    .project-card {
+        flex-direction: column;
+    }
+
+    .project-iframe {
+        width: 100%;
+        height: 150px;
+        margin-top: 15px;
+        
+    }
+}
+.ondc-title {
+    position: absolute;
+    top: 10px;  /* Adjust as needed */
+    left: 20px; /* Adjust as needed */
+    font-size: 1.8rem; /* Increased size for visibility */
+    color: red;
+    animation: blink 1s step-start infinite;
+    background-color: rgba(255, 255, 255, 0.8); /* Optional background for contrast */
+    padding: 5px 10px; /* Add padding for a better look */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+
+    z-index: 129;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+.nav-bar {
+    background: #007acc; /* Background color for the bar */
+    padding: 10px 20px; /* Padding for spacing */
+    text-align: center; /* Center the button */
+}
+
+.nav-button {
+    color: white; /* Text color */
+    text-decoration: none; /* Remove underline */
+    font-size: 1.2rem; /* Font size */
+    padding: 10px 15px; /* Padding for button */
+    border-radius: 5px; /* Rounded corners */
+    transition: background 0.3s; /* Transition for hover effect */
+}
+
+.nav-button:hover {
+    background: #005fa3; /* Darker color on hover */
+}
+    /* Add your existing CSS here */
+        
+    .nav-bar {
+        background: #007acc; /* Background color for the bar */
+        padding: 10px 20px; /* Padding for spacing */
+        text-align: center; /* Center the button */
+    }
+
+    .nav-button {
+        color: white; /* Text color */
+        text-decoration: none; /* Remove underline */
+        font-size: 1.2rem; /* Font size */
+        padding: 10px 15px; /* Padding for button */
+        border-radius: 5px; /* Rounded corners */
+        transition: background 0.3s; /* Transition for hover effect */
+    }
+
+    .nav-button:hover {
+        background: #005fa3; /* Darker color on hover */
+    }
+    
+    .ondc-title {
+        position: absolute;
+        top: 10px;  /* Adjust as needed */
+        right: 20px; /* Adjust as needed */
+        font-size: 1.8rem; /* Increased size for visibility */
+        color: red;
+        animation: blink 1s step-start infinite;
+        background-color: rgba(255, 255, 255, 0.8); /* Optional background for contrast */
+        padding: 5px 10px; /* Add padding for a better look */
+        border-radius: 5px; /* Rounded corners */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    }
+
+    @keyframes blink {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+    }
+
+    .ondc-description {
+        margin-top: 20px; /* Space between title and description */
+        font-size: 1rem; /* Font size */
+        color: #333; /* Text color */
+        line-height: 1.5; /* Line height for readability */
+    }
+
+    .ondc-info {
+        margin-top: 10px; /* Space between the info block */
+        padding: 15px; /* Padding around the info */
+        background-color: #f0f8ff; /* Light background color */
+        border-left: 5px solid #007acc; /* Left border */
+        border-radius: 5px; /* Rounded corners */
+    }
+        .ondc-title {
+            position: absolute;
+            top: 10px;  /* Adjust as needed */
+            right: 20px; /* Adjust as needed */
+            font-size: 1.8rem; /* Increased size for visibility */
+            color: red;
+            animation: blink 1s step-start infinite;
+            background-color: rgba(255, 255, 255, 0.8); /* Optional background for contrast */
+            padding: 5px 10px; /* Add padding for a better look */
+            border-radius: 5px; /* Rounded corners */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .ondc-description {
+            margin-top: 20px; /* Space between title and description */
+            font-size: 1rem; /* Font size */
+            color: #333; /* Text color */
+            line-height: 1.5; /* Line height for readability */
+        }
+
+        .ondc-info {
+            margin-top: 10px; /* Space between the info block */
+            padding: 15px; /* Padding around the info */
+            background-color: #f0f8ff; /* Light background color */
+            border-left: 5px solid #007acc; /* Left border */
+            border-radius: 5px; /* Rounded corners */
+        }
+        .whatsapp-button {
+            text-align: center; /* Center align the button */
+            margin: 20px 0; /* Space above and below */
+        }
+        
+        .whatsapp-button a {
+            background-color: #25D366; /* WhatsApp green color */
+            color: white; /* Text color */
+            padding: 10px 20px; /* Padding for the button */
+            text-decoration: none; /* Remove underline */
+            border-radius: 5px; /* Rounded corners */
+            font-size: 1.2rem; /* Font size */
+            transition: background 0.3s; /* Transition effect */
+        }
+        
+        .whatsapp-button a:hover {
+            background-color: #1DA851; /* Darker green on hover */
+        }
+        

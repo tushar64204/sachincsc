@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Sachin CSC Center</title>
+    <link rel="icon" type="image/png" href="/logocsc.jpg"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+       
+
+</style>
+</head>
+<body>
+
+    <!-- Top Navigation Links -->
+    <div class="top-nav">
+        <img src="./logocsc.jpg" alt="Logo">
+        <a href="#home">Home</a>
+        <a href="#work-section">Our Services</a>
+        <a href="#social-media-section">Social Media</a>
+        <a href="#contact-us">Contact Us</a>
+        <div class="share-link" onclick="copyLink()">Copy Webpage Link</div>
+    </div>
+
+    <!-- Header Section -->
+    <div class="header" id="home">
+       
+        <h1>Online Sachin CSC Center</h1>
+        <p>Empowering Communities with Digital Services!</p>
+    </div>
+<!-- Announcement Bar 1: Website/Portfolio Service -->
+<div class="announcement-bar" id="service-bar">
+    <p>Get your portfolio or website with a domain and 3 months of no-cost hosting for just Rs 2999! <span class="highlight">Fast loading on Hostinger!</span></p>
+    <span class="new-sticker">NEW</span>
+    <div class="buttons">
+        <button onclick="openInquiryModal('Website/Portfolio')">Contact on WhatsApp</button>
+        <a href="web-work.html" class="cta-button">See Previous Work</a>
+    </div>
+</div>
+
+<!-- Announcement Bar 2: Resume/CV Services -->
+<div class="announcement-bar" id="resume-bar">
+    <p>AI-filtered, customized resumes and CVs for all professions. Dedicated templates available!</p>
+    <span class="new-sticker">NEW</span>
+    <div class="buttons">
+        <button  onclick="openInquiryModal('Resume/CV')">Get Resume Help</button>
+        <a href="resume-work.html" class="cta-button">View Sample Resumes</a>
+    </div>
+</div>
+ 
+    <!-- Search Section -->
+    <div class="search-container">
+        <input type="text" id="work-search" placeholder="Search for a service..." oninput="filterServices()">
+        <input type="button" value="Search" onclick="filterServices()">
+    </div>
+
+    <!-- Cyclic Banner Section -->
+    <div class="banner-container" id="banner-section">
+        <div class="banner">
+            <img src="./4.png" alt="Visiting Card 1">
+            <img src="./5.png" alt="Visiting Card 2">
+        </div>
+    </div>
+
+<!-- Modal Structure -->
+<div id="inquiryModal" class="inquiry-modal">
+    <div class="inquiry-modal-content">
+        <span class="inquiry-close" onclick="closeInquiryModal()">&times;</span>
+        <p id="inquiryServiceMessage"></p>
+        <label for="inquiryCustomerName">Enter your name:</label>
+        <input type="text" id="inquiryCustomerName" placeholder="Your name">
+        <a id="inquiryWhatsAppLink" target="_blank" href="#">Send Inquiry on WhatsApp</a>
+    </div>
+</div>
+<!-- JavaScript for modal handling and WhatsApp integration -->
+<script>
+    function openInquiryModal(service) {
+        const inquiryModal = document.getElementById('inquiryModal');
+        const inquiryServiceMessage = document.getElementById('inquiryServiceMessage');
+        
+        // Set the service message dynamically
+        inquiryServiceMessage.textContent = `You are about to inquire about "${service}".`;
+        
+        // Show the modal with animations
+        inquiryModal.classList.add('show');
+        setTimeout(() => {
+            inquiryModal.querySelector('.inquiry-modal-content').classList.add('show');
+        }, 10); // slight delay to enable transition
+    }
+
+    function closeInquiryModal() {
+        const inquiryModal = document.getElementById('inquiryModal');
+        
+        // Hide the modal content first, then the modal container
+        inquiryModal.querySelector('.inquiry-modal-content').classList.remove('show');
+        setTimeout(() => {
+            inquiryModal.classList.remove('show');
+        }, 300); // matches the CSS transition duration
+    }
+
+    // Update WhatsApp link when customer name is provided
+    document.getElementById('inquiryCustomerName').addEventListener('input', function() {
+        const inquiryCustomerName = this.value;
+        const inquiryWhatsAppLink = document.getElementById('inquiryWhatsAppLink');
+        const inquiryServiceMessage = document.getElementById('inquiryServiceMessage').textContent;
+        const service = inquiryServiceMessage.match(/"(.+?)"/)[1];  // Extract service name
+        
+        // Set WhatsApp link with customer name and service
+        inquiryWhatsAppLink.href = `https://wa.me/919817409607?text=Hello, my name is ${inquiryCustomerName}. I would like to inquire about ${service}.`; 
+    });
+
+    // Close modal when clicking outside of the modal content
+    window.onclick = function(event) {
+        const inquiryModal = document.getElementById('inquiryModal');
+        if (event.target == inquiryModal) {
+            closeInquiryModal();
+        }
+    };
+</script>
+   <!-- Services Section -->
+<div class="services" id="work-section">
+    <h2>Our Services</h2>
+    <ul id="service-list">
+        <ul>
+            <!-- Existing services -->
+
+            <li>MDU Reappear Form <a href="#" onclick="openModal('MDU Reappear Form')">WhatsApp</a></li>
+             <!-- Additional Family ID and document-related services -->
+             <li>Family ID <a href="#" onclick="openModal('Family ID')">WhatsApp</a></li>
+             <li>Family ID Member Addition <a href="#" onclick="openModal('Family ID Member Addition')">WhatsApp</a></li>
+             <li>Family ID Address Update <a href="#" onclick="openModal('Family ID Address Update')">WhatsApp</a></li>
+             <li>Family ID Father Name Change <a href="#" onclick="openModal('Family ID Father Name Change')">WhatsApp</a></li>
+             <li>Family ID Mother Name Change <a href="#" onclick="openModal('Family ID Mother Name Change')">WhatsApp</a></li>
+             <li>Family ID Relation Correction <a href="#" onclick="openModal('Family ID Relation Correction')">WhatsApp</a></li>
+             <li>Family ID Mobile Number Update <a href="#" onclick="openModal('Family ID Mobile Number Update')">WhatsApp</a></li>
+             <li>Family ID DOB Correction <a href="#" onclick="openModal('Family ID DOB Correction')">WhatsApp</a></li>
+             <li>Family ID Construction Worker Registration <a href="#" onclick="openModal('Family ID Construction Worker Registration')">WhatsApp</a></li>
+             <li>Family ID Head Change <a href="#" onclick="openModal('Family ID Head Change')">WhatsApp</a></li>
+             <li>Family ID DOB Change <a href="#" onclick="openModal('Family ID DOB Change')">WhatsApp</a></li>
+             <li>Family ID Add Husband/Wife/Brother <a href="#" onclick="openModal('Family ID Add Husband/Wife/Brother')">WhatsApp</a></li>
+             <li>Senior Citizen Bus Pass <a href="#" onclick="openModal('Senior Citizen Bus Pass')">WhatsApp</a></li>
+             <li>Income Certificate <a href="#" onclick="openModal('Income Certificate')">WhatsApp</a></li>
+             <li>Caste Certificate <a href="#" onclick="openModal('Caste Certificate')">WhatsApp</a></li>
+             <li>Ayushman Card <a href="#" onclick="openModal('Ayushman Card')">WhatsApp</a></li>
+             <li>BPL Family Bus Pass (Happy Card) <a href="#" onclick="openModal('BPL Family Bus Pass (Happy Card)')">WhatsApp</a></li>
+ 
+            <li>Sarkari Nokri Form Apply <a href="#" onclick="openModal('Sarkari Nokri Updates')">WhatsApp</a></li>
+            <li>Aadhaar Services <a href="#" onclick="openModal('Aadhaar Services')">WhatsApp</a></li>
+            <li>Aadhaar E-Card PDF <a href="#" onclick="openModal('Aadhaar Card Printing')">WhatsApp</a></li>
+            <li>Banking Services <a href="#" onclick="openModal('Banking Services')">WhatsApp</a></li>
+            <li>Bank Account Opening <a href="#" onclick="openModal('Bank Account Opening')">WhatsApp</a></li>
+            <li>Money Transfer <a href="#" onclick="openModal('Money Transfer')">WhatsApp</a></li>
+            <li>Government Services <a href="#" onclick="openModal('Government Services')">WhatsApp</a></li>
+            <li>PAN Card Apply <a href="#" onclick="openModal('PAN Card Application')">WhatsApp</a></li>
+            <li>Voter ID Registration <a href="#" onclick="openModal('Voter ID Registration')">WhatsApp</a></li>
+            <li>Passport Services <a href="#" onclick="openModal('Passport Services')">WhatsApp</a></li>
+            <li>e-District Services <a href="#" onclick="openModal('e-District Services')">WhatsApp</a></li>
+            <li>Utility Bill Payments <a href="#" onclick="openModal('Utility Bill Payments')">WhatsApp</a></li>
+            <li>Electricity Bill Payment <a href="#" onclick="openModal('Electricity Bill Payment')">WhatsApp</a></li>
+            <li>Water Bill Payment <a href="#" onclick="openModal('Water Bill Payment')">WhatsApp</a></li>
+            <li>Gas Bill Payment <a href="#" onclick="openModal('Gas Bill Payment')">WhatsApp</a></li>
+            <li>Online Applications <a href="#" onclick="openModal('Online Applications')">WhatsApp</a></li>
+            <li>Job Card (MGNREGA) <a href="#" onclick="openModal('Job Card (MGNREGA)')">WhatsApp</a></li>
+            <li>Birth/Death Certificate <a href="#" onclick="openModal('Birth/Death Certificate')">WhatsApp</a></li>
+            <li>Income/Residential/Caste Certificate <a href="#" onclick="openModal('Income/Residential/Caste Certificate')">WhatsApp</a></li>
+            <li>Educational Services <a href="#" onclick="openModal('Educational Services')">WhatsApp</a></li>
+            <li>Online Exam Form Filling <a href="#" onclick="openModal('Online Exam Form Filling')">WhatsApp</a></li>
+            <li>Insurance Services <a href="#" onclick="openModal('Insurance Services')">WhatsApp</a></li>
+            <li>Life Insurance <a href="#" onclick="openModal('Life Insurance')">WhatsApp</a></li>
+            <li>Vehicle Insurance <a href="#" onclick="openModal('Vehicle Insurance')">WhatsApp</a></li>
+            <li>Health Insurance <a href="#" onclick="openModal('Health Insurance')">WhatsApp</a></li>
+            <li>New labor copy <a href="#" onclick="openModal('New labor copy')">WhatsApp</a></li>
+            <li> Approve labor copy <a href="#" onclick="openModal(' Approve labor copy')">WhatsApp</a></li>
+            <li>Online Shopping <a href="#" onclick="openModal('Online Shopping')">WhatsApp</a>
+            <li>IRCTC Train Tickets <a href="#" onclick="openModal('IRCTC Train Tickets')">WhatsApp</a></li>
+            <li>Air Tickets <a href="#" onclick="openModal('Air Tickets')">WhatsApp</a></li>
+            <li>Bus Tickets <a href="#" onclick="openModal('Bus Tickets')">WhatsApp</a></li>
+            <li>Mobile/DTH Recharge <a href="#" onclick="openModal('Mobile/DTH Recharge')">WhatsApp</a></li>
+          
+                     </ul>
+              </ul>
+
+    <!-- Modal Popup -->
+    <div id="serviceModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>Send a WhatsApp Message</h2>
+            <p>Select a service to send a WhatsApp message:</p>
+            <p id="serviceMessage"></p>
+            
+            <!-- Customer Name Input -->
+            <label for="customerName">Enter your name:</label>
+            <input type="text" id="customerName" placeholder="Your Name">
+            
+            <a id="whatsappLink" href="" target="_blank" class="send-btn">Send via WhatsApp</a>
+        </div>
+    </div>
+</div>
+
+<!-- Modal CSS -->
+<style>
+
+</style>
+
+<!-- Modal JavaScript -->
+<script>
+function openModal(service) {
+    const modal = document.getElementById('serviceModal');
+    const serviceMessage = document.getElementById('serviceMessage');
+    
+    // Set the service message dynamically
+    serviceMessage.textContent = `You are about to inquire about "${service}".`;
+    
+    // Show the modal with animations
+    modal.classList.add('show');
+    setTimeout(() => {
+        modal.querySelector('.modal-content').classList.add('show');
+    }, 10); // slight delay to enable transition
+}
+
+function closeModal() {
+    const modal = document.getElementById('serviceModal');
+    
+    // Hide the modal content first, then the modal container
+    modal.querySelector('.modal-content').classList.remove('show');
+    setTimeout(() => {
+        modal.classList.remove('show');
+    }, 300); // matches the CSS transition duration
+}
+
+// Update WhatsApp link when customer name is provided
+document.getElementById('customerName').addEventListener('input', function() {
+    const customerName = this.value;
+    const whatsappLink = document.getElementById('whatsappLink');
+    const serviceMessage = document.getElementById('serviceMessage').textContent;
+    const service = serviceMessage.match(/"(.+?)"/)[1];  // Extract service name
+    
+    // Set WhatsApp link with customer name and service
+    whatsappLink.href = `https://wa.me/918168197978?text=Hello, my name is ${customerName}. I would like to inquire about ${service}.`;
+});
+
+// Close modal when clicking outside of the modal content
+window.onclick = function(event) {
+    const modal = document.getElementById('serviceModal');
+    if (event.target == modal) {
+        closeModal();
+    }
+};
+</script>
+
+    <!-- Social Media Section -->
+    <div class="social-media" id="social-media-section">
+        <h2>Stay Connected & Get Regular Updates</h2>
+        <p>Join us on Instagram, WhatsApp, and Telegram for job updates, MDU reappear form arrivals, offers, and important notifications.</p>
+
+        <a href="https://chat.whatsapp.com/ITfEqOH0EH98J5nbrwFkXo" class="whatsapp">Join WhatsApp Group</a>
+        <a href="https://t.me/+exiqemcfF-o5NjFl" class="telegram">Join Telegram Group</a>
+        <a href="https://www.instagram.com/online_forms_99/profilecard/?igsh=dTNjdTAyYnZxcmcy" class="instagram">Follow on Instagram</a>
+    </div>
+
+    <!-- Footer Section -->
+<div class="footer" id="contact-us">
+    <p>SACHIN</p>
+    <p>ONLINE CSC CENTER</p>
+    <p>Email: <a href="mailto:ssachinkaushik1999@gmail.com">ssachinkaushik1999@gmail.com</a></p>
+    <p>Address: Gohana Road, Rohtak, Haryana</p>
+    <p>Phone: <a href="tel:+918168197978">+91-81681-97978</a></p>
+    <p>SACHIN CSC CENTER</p>
+    <p>© 2024 Online Sachin CSC Center | Powered by HooShop</p>
+    <p><a href="#home">Back to Home</a> | <a href="#work-section">Our Services</a> | <a href="#social-media-section">Social Media</a> | <a href="#contact-us">Contact Us</a></p>
+</div>
+
+    <div class="scroll-top" onclick="scrollToTop()">^</div>
+
+    <script>
+        // Function to scroll to top
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Copy Webpage Link to Clipboard
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href);
+            alert('Webpage link copied!');
+        }
+
+        // Filter Services based on search input
+        function filterServices() {
+            const input = document.getElementById('work-search').value.toLowerCase();
+            const services = document.getElementById('service-list').getElementsByTagName('li');
+            const bannerSection = document.getElementById('banner-section');
+
+            for (let i = 0; i < services.length; i++) {
+                const service = services[i];
+                const text = service.textContent || service.innerText;
+
+                if (text.toLowerCase().indexOf(input) > -1) {
+                    service.style.display = '';
+                } else {
+                    service.style.display = 'none';
+                }
+            }
+
+            // Hide banner section when typing in search
+            if (input.length > 0) {
+                bannerSection.classList.add('hidden');
+            } else {
+                bannerSection.classList.remove('hidden');
+            }
+        }
+    </script>
+
+</body>
+</html>

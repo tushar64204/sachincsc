@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Showcase</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS -->
+    <style>
+        /* Add your existing CSS here */
+        
+        .nav-bar {
+            background: #007acc; /* Background color for the bar */
+            padding: 10px 20px; /* Padding for spacing */
+            text-align: center; /* Center the button */
+        }
+
+        .nav-button {
+            color: white; /* Text color */
+            text-decoration: none; /* Remove underline */
+            font-size: 1.2rem; /* Font size */
+            padding: 10px 15px; /* Padding for button */
+            border-radius: 5px; /* Rounded corners */
+            transition: background 0.3s; /* Transition for hover effect */
+        }
+
+        .nav-button:hover {
+            background: #005fa3; /* Darker color on hover */
+        }
+        
+        .ondc-title {
+            position: absolute;
+            top: 10px;  /* Adjust as needed */
+            right: 20px; /* Adjust as needed */
+            font-size: 1.8rem; /* Increased size for visibility */
+            color: red;
+            animation: blink 1s step-start infinite;
+            background-color: rgba(255, 255, 255, 0.8); /* Optional background for contrast */
+            padding: 5px 10px; /* Add padding for a better look */
+            border-radius: 5px; /* Rounded corners */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .ondc-description {
+            margin-top: 20px; /* Space between title and description */
+            font-size: 1rem; /* Font size */
+            color: #333; /* Text color */
+            line-height: 1.5; /* Line height for readability */
+        }
+
+        .ondc-info {
+            margin-top: 10px; /* Space between the info block */
+            padding: 15px; /* Padding around the info */
+            background-color: #f0f8ff; /* Light background color */
+            border-left: 5px solid #007acc; /* Left border */
+            border-radius: 5px; /* Rounded corners */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="nav-bar">
+        <a href="#ondc-section" class="nav-button">Explore ONDC Feature</a>
+    </div>
+
+    <!-- ONDC Seller Section -->
+    <div id="ondc-section" class="project-frame" style="position: relative;">
+        <div class="ondc-title">📦 ONDC</div>
+        <div class="project-card">
+            <iframe src="https://www.mystore.in/en/seller/jainsons-mobile-hub" class="project-iframe"></iframe>
+            <h3>ONDC Seller - Get Online Orders Hassle-Free</h3>
+            <p class="ondc-description">Join the ONDC platform to list your products and reach a wider audience with minimal effort. If you hold a GST registration, you can start listing your products for free!</p>
+            <div class="ondc-info">
+                <h4>Why Choose ONDC?</h4>
+                <ul>
+                    <li>🚀 **Free Listing:** No fees for GST-holding sellers.</li>
+                    <li>📈 **Increased Visibility:** Gain access to a larger customer base.</li>
+                    <li>📦 **Hassle-Free Delivery:** Streamlined order and delivery management.</li>
+                    <li>🔒 **Government-Supported:** Enjoy a trusted platform backed by government initiatives.</li>
+                </ul>
+            </div>
+            <p>Ready to take your business online? Click the button below to get started!</p>
+            <a href="https://www.mystore.in/en/seller/jainsons-mobile-hub" target="_blank">Visit ONDC Seller Page</a>
+        </div>
+    </div>
+
+</body>
+</html>
